@@ -1,5 +1,7 @@
-<html lang="en"><head>
-    <title>Code coverage report for node-npmtest-serve-static/serve-static/index.js</title>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for node-npmtest-serve-static/node_modules/serve-static/index.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -192,7 +194,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-serve-static">npmtest-serve-static (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-serve-static/serve-static/index.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-serve-static/node_modules/serve-static/index.js</span></h1>
     <h2>
         
         Statements: <span class="metric">17.11% <small>(13 / 76)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -208,11 +210,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> » <a href="index.html">node-npmtest-serve-static/serve-static/</a> » index.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-serve-static/node_modules/serve-static/</a> &#187; index.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tbody><tr><td class="line-count">1
+<tr><td class="line-count">1
 2
 3
 4
@@ -669,94 +671,94 @@ module.exports.mime = send.mime
  * @public
  */
 &nbsp;
-<span class="fstat-no" title="function not covered">function serveStatic (root, options) {</span>
-<span class="cstat-no" title="statement not covered">  if (!root) {</span>
-<span class="cstat-no" title="statement not covered">    throw new TypeError('root path required')</span>
+<span class="fstat-no" title="function not covered" >function serveStatic (root, options) {</span>
+<span class="cstat-no" title="statement not covered" >  if (!root) {</span>
+<span class="cstat-no" title="statement not covered" >    throw new TypeError('root path required')</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (typeof root !== 'string') {</span>
-<span class="cstat-no" title="statement not covered">    throw new TypeError('root path must be a string')</span>
+<span class="cstat-no" title="statement not covered" >  if (typeof root !== 'string') {</span>
+<span class="cstat-no" title="statement not covered" >    throw new TypeError('root path must be a string')</span>
   }
 &nbsp;
   // copy options object
-<span class="cstat-no" title="statement not covered">  var opts = Object.create(options || null)</span>
+<span class="cstat-no" title="statement not covered" >  var opts = Object.create(options || null)</span>
 &nbsp;
   // fall-though
-<span class="cstat-no" title="statement not covered">  var fallthrough = opts.fallthrough !== false</span>
+<span class="cstat-no" title="statement not covered" >  var fallthrough = opts.fallthrough !== false</span>
 &nbsp;
   // default redirect
-<span class="cstat-no" title="statement not covered">  var redirect = opts.redirect !== false</span>
+<span class="cstat-no" title="statement not covered" >  var redirect = opts.redirect !== false</span>
 &nbsp;
   // headers listener
-<span class="cstat-no" title="statement not covered">  var setHeaders = opts.setHeaders</span>
+<span class="cstat-no" title="statement not covered" >  var setHeaders = opts.setHeaders</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (setHeaders &amp;&amp; typeof setHeaders !== 'function') {</span>
-<span class="cstat-no" title="statement not covered">    throw new TypeError('option setHeaders must be function')</span>
+<span class="cstat-no" title="statement not covered" >  if (setHeaders &amp;&amp; typeof setHeaders !== 'function') {</span>
+<span class="cstat-no" title="statement not covered" >    throw new TypeError('option setHeaders must be function')</span>
   }
 &nbsp;
   // setup options for send
-<span class="cstat-no" title="statement not covered">  opts.maxage = opts.maxage || opts.maxAge || 0</span>
-<span class="cstat-no" title="statement not covered">  opts.root = resolve(root)</span>
+<span class="cstat-no" title="statement not covered" >  opts.maxage = opts.maxage || opts.maxAge || 0</span>
+<span class="cstat-no" title="statement not covered" >  opts.root = resolve(root)</span>
 &nbsp;
   // construct directory listener
-<span class="cstat-no" title="statement not covered">  var onDirectory = redirect</span>
+<span class="cstat-no" title="statement not covered" >  var onDirectory = redirect</span>
     ? createRedirectDirectoryListener()
     : createNotFoundDirectoryListener()
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return <span class="fstat-no" title="function not covered">function serveStatic (req, res, next) {</span></span>
-<span class="cstat-no" title="statement not covered">    if (req.method !== 'GET' &amp;&amp; req.method !== 'HEAD') {</span>
-<span class="cstat-no" title="statement not covered">      if (fallthrough) {</span>
-<span class="cstat-no" title="statement not covered">        return next()</span>
+<span class="cstat-no" title="statement not covered" >  return <span class="fstat-no" title="function not covered" >function serveStatic (req, res, next) {</span></span>
+<span class="cstat-no" title="statement not covered" >    if (req.method !== 'GET' &amp;&amp; req.method !== 'HEAD') {</span>
+<span class="cstat-no" title="statement not covered" >      if (fallthrough) {</span>
+<span class="cstat-no" title="statement not covered" >        return next()</span>
       }
 &nbsp;
       // method not allowed
-<span class="cstat-no" title="statement not covered">      res.statusCode = 405</span>
-<span class="cstat-no" title="statement not covered">      res.setHeader('Allow', 'GET, HEAD')</span>
-<span class="cstat-no" title="statement not covered">      res.setHeader('Content-Length', '0')</span>
-<span class="cstat-no" title="statement not covered">      res.end()</span>
-<span class="cstat-no" title="statement not covered">      return</span>
+<span class="cstat-no" title="statement not covered" >      res.statusCode = 405</span>
+<span class="cstat-no" title="statement not covered" >      res.setHeader('Allow', 'GET, HEAD')</span>
+<span class="cstat-no" title="statement not covered" >      res.setHeader('Content-Length', '0')</span>
+<span class="cstat-no" title="statement not covered" >      res.end()</span>
+<span class="cstat-no" title="statement not covered" >      return</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    var forwardError = !fallthrough</span>
-<span class="cstat-no" title="statement not covered">    var originalUrl = parseUrl.original(req)</span>
-<span class="cstat-no" title="statement not covered">    var path = parseUrl(req).pathname</span>
+<span class="cstat-no" title="statement not covered" >    var forwardError = !fallthrough</span>
+<span class="cstat-no" title="statement not covered" >    var originalUrl = parseUrl.original(req)</span>
+<span class="cstat-no" title="statement not covered" >    var path = parseUrl(req).pathname</span>
 &nbsp;
     // make sure redirect occurs at mount
-<span class="cstat-no" title="statement not covered">    if (path === '/' &amp;&amp; originalUrl.pathname.substr(-1) !== '/') {</span>
-<span class="cstat-no" title="statement not covered">      path = ''</span>
+<span class="cstat-no" title="statement not covered" >    if (path === '/' &amp;&amp; originalUrl.pathname.substr(-1) !== '/') {</span>
+<span class="cstat-no" title="statement not covered" >      path = ''</span>
     }
 &nbsp;
     // create send stream
-<span class="cstat-no" title="statement not covered">    var stream = send(req, path, opts)</span>
+<span class="cstat-no" title="statement not covered" >    var stream = send(req, path, opts)</span>
 &nbsp;
     // add directory handler
-<span class="cstat-no" title="statement not covered">    stream.on('directory', onDirectory)</span>
+<span class="cstat-no" title="statement not covered" >    stream.on('directory', onDirectory)</span>
 &nbsp;
     // add headers listener
-<span class="cstat-no" title="statement not covered">    if (setHeaders) {</span>
-<span class="cstat-no" title="statement not covered">      stream.on('headers', setHeaders)</span>
+<span class="cstat-no" title="statement not covered" >    if (setHeaders) {</span>
+<span class="cstat-no" title="statement not covered" >      stream.on('headers', setHeaders)</span>
     }
 &nbsp;
     // add file listener for fallthrough
-<span class="cstat-no" title="statement not covered">    if (fallthrough) {</span>
-<span class="cstat-no" title="statement not covered">      stream.on('file', <span class="fstat-no" title="function not covered">function onFile () {</span></span>
+<span class="cstat-no" title="statement not covered" >    if (fallthrough) {</span>
+<span class="cstat-no" title="statement not covered" >      stream.on('file', <span class="fstat-no" title="function not covered" >function onFile () {</span></span>
         // once file is determined, always forward error
-<span class="cstat-no" title="statement not covered">        forwardError = true</span>
+<span class="cstat-no" title="statement not covered" >        forwardError = true</span>
       })
     }
 &nbsp;
     // forward errors
-<span class="cstat-no" title="statement not covered">    stream.on('error', <span class="fstat-no" title="function not covered">function error (err) {</span></span>
-<span class="cstat-no" title="statement not covered">      if (forwardError || !(err.statusCode &lt; 500)) {</span>
-<span class="cstat-no" title="statement not covered">        next(err)</span>
-<span class="cstat-no" title="statement not covered">        return</span>
+<span class="cstat-no" title="statement not covered" >    stream.on('error', <span class="fstat-no" title="function not covered" >function error (err) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (forwardError || !(err.statusCode &lt; 500)) {</span>
+<span class="cstat-no" title="statement not covered" >        next(err)</span>
+<span class="cstat-no" title="statement not covered" >        return</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered">      next()</span>
+<span class="cstat-no" title="statement not covered" >      next()</span>
     })
 &nbsp;
     // pipe
-<span class="cstat-no" title="statement not covered">    stream.pipe(res)</span>
+<span class="cstat-no" title="statement not covered" >    stream.pipe(res)</span>
   }
 }
 &nbsp;
@@ -764,14 +766,14 @@ module.exports.mime = send.mime
  * Collapse all leading slashes into a single slash
  * @private
  */
-<span class="fstat-no" title="function not covered">function collapseLeadingSlashes (str) {</span>
-<span class="cstat-no" title="statement not covered">  for (var i = 0; i &lt; str.length; i++) {</span>
-<span class="cstat-no" title="statement not covered">    if (str[i] !== '/') {</span>
-<span class="cstat-no" title="statement not covered">      break</span>
+<span class="fstat-no" title="function not covered" >function collapseLeadingSlashes (str) {</span>
+<span class="cstat-no" title="statement not covered" >  for (var i = 0; i &lt; str.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >    if (str[i] !== '/') {</span>
+<span class="cstat-no" title="statement not covered" >      break</span>
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return i &gt; 1</span>
+<span class="cstat-no" title="statement not covered" >  return i &gt; 1</span>
     ? '/' + str.substr(i)
     : str
 }
@@ -784,8 +786,8 @@ module.exports.mime = send.mime
  * @private
  */
 &nbsp;
-<span class="fstat-no" title="function not covered">function createHtmlDocument (title, body) {</span>
-<span class="cstat-no" title="statement not covered">  return '&lt;!DOCTYPE html&gt;\n' +</span>
+<span class="fstat-no" title="function not covered" >function createHtmlDocument (title, body) {</span>
+<span class="cstat-no" title="statement not covered" >  return '&lt;!DOCTYPE html&gt;\n' +</span>
     '&lt;html lang="en"&gt;\n' +
     '&lt;head&gt;\n' +
     '&lt;meta charset="utf-8"&gt;\n' +
@@ -801,9 +803,9 @@ module.exports.mime = send.mime
  * @private
  */
 &nbsp;
-<span class="fstat-no" title="function not covered">function createNotFoundDirectoryListener () {</span>
-<span class="cstat-no" title="statement not covered">  return <span class="fstat-no" title="function not covered">function notFound () {</span></span>
-<span class="cstat-no" title="statement not covered">    this.error(404)</span>
+<span class="fstat-no" title="function not covered" >function createNotFoundDirectoryListener () {</span>
+<span class="cstat-no" title="statement not covered" >  return <span class="fstat-no" title="function not covered" >function notFound () {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.error(404)</span>
   }
 }
 &nbsp;
@@ -812,42 +814,41 @@ module.exports.mime = send.mime
  * @private
  */
 &nbsp;
-<span class="fstat-no" title="function not covered">function createRedirectDirectoryListener () {</span>
-<span class="cstat-no" title="statement not covered">  return <span class="fstat-no" title="function not covered">function redirect (res) {</span></span>
-<span class="cstat-no" title="statement not covered">    if (this.hasTrailingSlash()) {</span>
-<span class="cstat-no" title="statement not covered">      this.error(404)</span>
-<span class="cstat-no" title="statement not covered">      return</span>
+<span class="fstat-no" title="function not covered" >function createRedirectDirectoryListener () {</span>
+<span class="cstat-no" title="statement not covered" >  return <span class="fstat-no" title="function not covered" >function redirect (res) {</span></span>
+<span class="cstat-no" title="statement not covered" >    if (this.hasTrailingSlash()) {</span>
+<span class="cstat-no" title="statement not covered" >      this.error(404)</span>
+<span class="cstat-no" title="statement not covered" >      return</span>
     }
 &nbsp;
     // get original URL
-<span class="cstat-no" title="statement not covered">    var originalUrl = parseUrl.original(this.req)</span>
+<span class="cstat-no" title="statement not covered" >    var originalUrl = parseUrl.original(this.req)</span>
 &nbsp;
     // append trailing slash
-<span class="cstat-no" title="statement not covered">    originalUrl.path = null</span>
-<span class="cstat-no" title="statement not covered">    originalUrl.pathname = collapseLeadingSlashes(originalUrl.pathname + '/')</span>
+<span class="cstat-no" title="statement not covered" >    originalUrl.path = null</span>
+<span class="cstat-no" title="statement not covered" >    originalUrl.pathname = collapseLeadingSlashes(originalUrl.pathname + '/')</span>
 &nbsp;
     // reformat the URL
-<span class="cstat-no" title="statement not covered">    var loc = encodeUrl(url.format(originalUrl))</span>
-<span class="cstat-no" title="statement not covered">    var doc = createHtmlDocument('Redirecting', 'Redirecting to &lt;a href="' + escapeHtml(loc) + '"&gt;' +</span>
+<span class="cstat-no" title="statement not covered" >    var loc = encodeUrl(url.format(originalUrl))</span>
+<span class="cstat-no" title="statement not covered" >    var doc = createHtmlDocument('Redirecting', 'Redirecting to &lt;a href="' + escapeHtml(loc) + '"&gt;' +</span>
       escapeHtml(loc) + '&lt;/a&gt;')
 &nbsp;
     // send redirect response
-<span class="cstat-no" title="statement not covered">    res.statusCode = 301</span>
-<span class="cstat-no" title="statement not covered">    res.setHeader('Content-Type', 'text/html; charset=UTF-8')</span>
-<span class="cstat-no" title="statement not covered">    res.setHeader('Content-Length', Buffer.byteLength(doc))</span>
-<span class="cstat-no" title="statement not covered">    res.setHeader('Content-Security-Policy', "default-src 'self'")</span>
-<span class="cstat-no" title="statement not covered">    res.setHeader('X-Content-Type-Options', 'nosniff')</span>
-<span class="cstat-no" title="statement not covered">    res.setHeader('Location', loc)</span>
-<span class="cstat-no" title="statement not covered">    res.end(doc)</span>
+<span class="cstat-no" title="statement not covered" >    res.statusCode = 301</span>
+<span class="cstat-no" title="statement not covered" >    res.setHeader('Content-Type', 'text/html; charset=UTF-8')</span>
+<span class="cstat-no" title="statement not covered" >    res.setHeader('Content-Length', Buffer.byteLength(doc))</span>
+<span class="cstat-no" title="statement not covered" >    res.setHeader('Content-Security-Policy', "default-src 'self'")</span>
+<span class="cstat-no" title="statement not covered" >    res.setHeader('X-Content-Type-Options', 'nosniff')</span>
+<span class="cstat-no" title="statement not covered" >    res.setHeader('Location', loc)</span>
+<span class="cstat-no" title="statement not covered" >    res.end(doc)</span>
   }
 }
 &nbsp;
 &nbsp;</pre></td></tr>
-</tbody></table></pre>
+</table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 09:23:19 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Mon Apr 17 2017 15:45:57 GMT+0000 (UTC)</div>
 </div>
-
-
-</body></html>
+</body>
+</html>
