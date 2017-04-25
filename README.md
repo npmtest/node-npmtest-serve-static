@@ -1,4 +1,7 @@
-# test coverage for  [serve-static (v1.12.1)](https://github.com/expressjs/serve-static#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-serve-static.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-serve-static) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-serve-static.svg)](https://travis-ci.org/npmtest/node-npmtest-serve-static)
+# npmtest-serve-static
+
+#### basic test coverage for  [serve-static (v1.12.1)](https://github.com/expressjs/serve-static#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-serve-static.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-serve-static) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-serve-static.svg)](https://travis-ci.org/npmtest/node-npmtest-serve-static)
+
 #### Serve static files
 
 [![NPM](https://nodei.co/npm/serve-static.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/serve-static)
@@ -7,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-serve-static/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-serve-static/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-serve-static/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-serve-static/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-serve-static/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-serve-static/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-serve-static/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-serve-static/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-serve-static/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-serve-static/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-serve-static/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-serve-static/build/coverage.html/index.html)
 
@@ -88,7 +91,8 @@
         "test-ci": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/",
         "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/"
     },
-    "version": "1.12.1"
+    "version": "1.12.1",
+    "bin": {}
 }
 ```
 
